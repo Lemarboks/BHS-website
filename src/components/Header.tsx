@@ -17,6 +17,27 @@ export default function Header() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.classList.toggle('menu-lock', open);
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    const onResize = () => {
+      if (window.innerWidth > 960) setOpen(false);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      document.body.classList.remove('menu-lock');
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('resize', onResize);
+    };
+  }, [open]);
+
   return (
     <>
       <div className="progress" style={{ width: `${progress}%` }} />
@@ -27,10 +48,10 @@ export default function Header() {
             <img src={images.logo} alt="Bloubergrant High School logo" />
             <span><small>High School</small>{school.name}</span>
           </Link>
-          <button className="menu" aria-label="Open menu" onClick={() => setOpen(true)}>
+          <button className="menu" aria-label="Open menu" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(true)}>
             <Menu size={18} /> Menu
           </button>
-          <nav className={`nav-links ${open ? 'open' : ''}`} aria-label="Main navigation">
+          <nav id="main-navigation" className={`nav-links ${open ? 'open' : ''}`} aria-label="Main navigation">
             <button className="close" aria-label="Close menu" onClick={() => setOpen(false)}>
               <X size={18} /> Close
             </button>
