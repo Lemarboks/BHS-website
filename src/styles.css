@@ -19,7 +19,9 @@
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--navy);color:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
-img{display:block;max-width:100%}
+img,svg{display:block;max-width:100%}
+button,input,textarea{font:inherit}
+.hero,.card,.motto-panel,.timeline-item,.pill,.contact-item,.staff-card,.photo{overflow-wrap:anywhere}
 .container{width:min(1180px,calc(100% - 38px));margin:auto}
 .skip{position:absolute;left:-999px;top:1rem;background:#fff;color:#000;padding:1rem;border-radius:1rem;z-index:300}
 .skip:focus{left:1rem}
@@ -52,7 +54,7 @@ img{display:block;max-width:100%}
 .hero-content{position:relative;z-index:1;padding:5rem 0;max-width:850px}
 .hero-copy{position:relative;z-index:1}
 .hero .eyebrow{display:inline-flex;align-items:center;gap:.55rem;border:1px solid rgba(125,211,252,.28);background:rgba(14,165,233,.14);color:#dff8ff;border-radius:999px;padding:.65rem .9rem}
-.hero h1{font-size:clamp(3.3rem,7vw,7.8rem);line-height:.88;letter-spacing:-.075em;margin:1.1rem 0}
+.hero h1{font-size:7rem;line-height:.88;letter-spacing:-.04em;margin:1.1rem 0;text-wrap:balance}
 .gradient{background:linear-gradient(90deg,#7dd3fc,#fff,#fecaca);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:1.15rem;line-height:1.8;color:#dbeafe;max-width:700px}
 .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:2rem}
@@ -71,7 +73,7 @@ section{padding:6.3rem 0}
 .soft{background:var(--soft);color:var(--ink)}
 .dark{background:#07111f;color:#fff}
 .section-head{display:flex;justify-content:space-between;gap:2rem;align-items:end;margin-bottom:2.5rem}
-.section-head h2,.split h2{font-size:clamp(2.25rem,4.5vw,4.85rem);line-height:.95;letter-spacing:-.06em;margin:.65rem 0}
+.section-head h2,.split h2{font-size:4.35rem;line-height:.95;letter-spacing:-.03em;margin:.65rem 0;text-wrap:balance}
 .section-head p,.split p{color:#475569;line-height:1.78;font-size:1.04rem}
 .dark .section-head p,.dark .split p{color:#cbd5e1}
 .split{display:grid;grid-template-columns:.92fr 1.08fr;gap:4rem;align-items:start}
@@ -85,7 +87,7 @@ section{padding:6.3rem 0}
 .card p{color:#64748b;line-height:1.75}
 .value-cards,.mini-cards{margin-top:2.8rem}
 .motto-panel{position:relative;overflow:hidden;border-radius:44px;background:linear-gradient(135deg,#0f172a,#1d4ed8 58%,#b91c1c);padding:3.5rem;color:white;box-shadow:0 35px 80px rgba(2,6,23,.18)}
-.motto-panel h2{font-size:clamp(2.6rem,6vw,6.2rem);line-height:.9;letter-spacing:-.075em;margin:.4rem 0}
+.motto-panel h2{font-size:5.6rem;line-height:.9;letter-spacing:-.04em;margin:.4rem 0;text-wrap:balance}
 .motto-panel p{max-width:780px;color:#e0f2fe;font-size:1.1rem;line-height:1.8}
 .motto-panel:after{content:"Integrity";position:absolute;right:-1rem;bottom:-1.5rem;font-size:clamp(4rem,12vw,11rem);font-weight:900;color:rgba(255,255,255,.07);letter-spacing:-.08em}
 .timeline{display:grid;gap:1rem}
@@ -111,7 +113,7 @@ section{padding:6.3rem 0}
 .tag{display:inline-flex;border-radius:999px;background:#e0f2fe;color:#0369a1;font-weight:900;font-size:.78rem;padding:.5rem .75rem}
 .contact-grid{display:grid;grid-template-columns:1fr .85fr;gap:1.3rem}
 .contact-panel{border-radius:38px;padding:2.4rem;background:linear-gradient(135deg,#0ea5e9,#1d4ed8);color:white}
-.contact-panel h2{font-size:clamp(2.2rem,4vw,4.5rem);line-height:.95;letter-spacing:-.055em}
+.contact-panel h2{font-size:4rem;line-height:.95;letter-spacing:-.03em;text-wrap:balance}
 .contact-item{display:flex;gap:1rem;background:rgba(255,255,255,.12);border-radius:24px;padding:1rem;margin:.85rem 0;line-height:1.5}
 .form{border-radius:38px;padding:2rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
 .form h3{font-size:2rem;margin-top:0}
@@ -126,12 +128,16 @@ textarea{min-height:130px}
 @keyframes cardfloat{50%{transform:rotate(-1deg) translateY(-14px)}}
 @keyframes orb{50%{transform:translateY(-32px) translateX(20px)}}
 
-@media(max-width:1120px){
+@media(max-width:1180px){
   .nav-links{gap:.55rem}
   .nav-links a{font-size:.84rem}
+  .hero h1{font-size:5.6rem}
+  .section-head h2,.split h2{font-size:3.65rem}
+  .motto-panel h2{font-size:4.6rem}
+  .contact-panel h2{font-size:3.4rem}
 }
 @media(max-width:960px){
-  .nav-links{display:none;position:fixed;inset:0;z-index:99;background:#07111f;padding:5rem 1.5rem 1.5rem;align-items:stretch;gap:1rem;flex-direction:column}
+  .nav-links{display:none;position:fixed;inset:0;z-index:99;background:#07111f;padding:5rem 1.5rem 1.5rem;align-items:stretch;gap:1rem;flex-direction:column;overflow-y:auto}
   .nav-links.open{display:flex}
   .nav-links a{display:block;border-radius:24px;background:rgba(255,255,255,.08);padding:1.15rem;font-size:1.8rem;font-weight:900;color:#fff}
   .menu{display:inline-flex}
@@ -142,8 +148,24 @@ textarea{min-height:130px}
   .section-head{display:block}
   .gallery{grid-template-columns:1fr;grid-auto-rows:260px}
   .photo:first-child{grid-row:span 1}
+  .hero{min-height:auto;padding-top:92px}
+  .hero-page{min-height:auto}
+  .hero-grid,.hero-content{padding:4rem 0}
   .hero h1{font-size:4.2rem}
+  .lead{max-width:100%}
   .brand small{display:none}
+  .section-head h2,.split h2{font-size:3.15rem}
+  .motto-panel h2{font-size:3.7rem}
+  .contact-panel h2{font-size:3rem}
+  .feature,.feature img{min-height:320px}
+}
+@media(max-width:720px){
+  section{padding:4.6rem 0}
+  .hero-grid,.hero-content{padding:3.2rem 0}
+  .cards,.news,.staff-grid,.pill-grid{gap:1rem}
+  .gallery{grid-auto-rows:230px}
+  .contact-item{align-items:flex-start}
+  .contact-item svg{flex:0 0 auto}
 }
 @media(max-width:540px){
   .container{width:min(100% - 28px,1180px)}
@@ -154,4 +176,35 @@ textarea{min-height:130px}
   .brand img{width:46px;height:46px}
   .motto-panel{padding:2rem}
   .staff-card img{height:220px}
+  .section-head h2,.split h2{font-size:2.45rem}
+  .motto-panel h2{font-size:2.75rem}
+  .contact-panel h2{font-size:2.35rem}
+  .card,.contact-panel,.form{padding:1.45rem;border-radius:26px}
+  .hero-card{border-radius:28px}
+  .hero-card .image{height:240px}
+  .icon{width:58px;height:58px;border-radius:20px}
+  .nav-links a{font-size:1.35rem}
+}
+@media(max-width:380px){
+  .container{width:min(100% - 22px,1180px)}
+  .brand{gap:.55rem}
+  .brand span{font-size:.9rem}
+  .menu{padding:.65rem .75rem}
+  .hero h1{font-size:2.55rem}
+  .hero .eyebrow{font-size:.68rem;letter-spacing:.14em}
+  .lead{font-size:1rem;line-height:1.65}
+  .section-head h2,.split h2{font-size:2.1rem}
+  .motto-panel h2{font-size:2.25rem}
+  .contact-panel h2{font-size:2rem}
+  .photo span{font-size:.9rem}
+}
+@media(max-height:620px) and (orientation:landscape){
+  .hero{min-height:auto}
+  .hero-grid,.hero-content{padding:2.3rem 0}
+  .hero h1{font-size:3.35rem}
+  .lead{font-size:1rem;line-height:1.6}
+  .hero-card .image{height:210px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
 }
