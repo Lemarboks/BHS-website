@@ -30,8 +30,10 @@ export const school = {
 export const navItems = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
-  { label: 'Motto', path: '/motto' },
   { label: 'Curriculum', path: '/curriculum' },
+  { label: 'Admissions', path: '/admissions' },
+  { label: 'Events', path: '/events' },
+  { label: 'News', path: '/news' },
   { label: 'Staff', path: '/staff' },
   { label: 'Gallery', path: '/gallery' },
   { label: 'Contact', path: '/contact' }
