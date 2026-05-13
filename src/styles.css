@@ -84,8 +84,8 @@ button,input,textarea{font:inherit}
 }
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 1.2rem}
 .brand{display:flex;align-items:center;gap:.8rem;font-weight:900;line-height:1.05;color:#fff;text-transform:uppercase}
-.badge-logo{position:relative;display:block;width:52px;height:52px;flex:0 0 52px;overflow:hidden;border-radius:10px;background:#fff}
-.badge-logo img{position:absolute;left:0;top:50%;width:auto;max-width:none;height:56px;transform:translateY(-50%)}
+.badge-logo{display:block;width:54px;height:54px;flex:0 0 54px}
+.badge-logo img{width:100%;height:100%;object-fit:contain}
 .brand small{display:block;color:#d5def0;letter-spacing:.11em;text-transform:uppercase;font-size:.62rem;margin-bottom:.18rem}
 .nav-links{display:flex;align-items:center;gap:.35rem}
 .nav-links a{
@@ -363,8 +363,7 @@ textarea{min-height:130px}
 @media(max-width:960px){
   .site-header{top:10px;width:min(430px,calc(100% - 24px));border-radius:28px}
   .nav{height:72px;padding:0 1rem}
-  .badge-logo{width:46px;height:46px;flex-basis:46px;border-radius:9px}
-  .badge-logo img{height:50px}
+  .badge-logo{width:48px;height:48px;flex-basis:48px}
   .brand small{display:none}
   .nav-links{
     display:none;

@@ -1,4 +1,4 @@
-import { images } from '../data';
+import badgeLogo from '../assets/images/bhs-badge.png';
 
 type BadgeLogoProps = {
   className?: string;
@@ -7,7 +7,7 @@ type BadgeLogoProps = {
 export default function BadgeLogo({ className = '' }: BadgeLogoProps) {
   return (
     <span className={`badge-logo ${className}`.trim()} aria-hidden="true">
-      <img src={images.logo} alt="" />
+      <img src={badgeLogo} alt="" />
     </span>
   );
 }
