@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { images, navItems, school } from '../data';
+import { navItems, school } from '../data';
+import BadgeLogo from './BadgeLogo';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -45,7 +46,8 @@ export default function Header() {
       <header className="site-header">
         <div className="container nav">
           <Link className="brand" to="/" onClick={() => setOpen(false)}>
-            <img src={images.logo} alt="Bloubergrant High School logo" />
+            <BadgeLogo />
+            <span className="sr-only">Bloubergrant High School logo</span>
             <span><small>High School</small>{school.name}</span>
           </Link>
           <button className="menu" aria-label="Open menu" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(true)}>
