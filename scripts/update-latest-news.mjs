@@ -3,6 +3,7 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const feedUrl = 'https://www.bloubergranthigh.co.za/category/latest-news/feed/';
+const awsumUrl = 'https://www.awsumnews.co.za/category/regions/western-cape/table-bay-melkbos/bloubergrant-high/';
 const outputUrl = new URL('../src/generated/latest-news.json', import.meta.url);
 const fallbackImage = 'https://www.bloubergranthigh.co.za/wp-content/uploads/2019/02/grade8-orientation-1080x608.jpg';
 
@@ -13,6 +14,10 @@ const decodeEntities = (value) =>
     .replace(/&#8211;/g, '-')
     .replace(/&#8217;/g, "'")
     .replace(/&#8230;/g, '...')
+    .replace(/\u00e2\u20ac[\u2122\u2019]/g, "'")
+    .replace(/\u00e2\u20ac[\u201c\u009d]/g, '"')
+    .replace(/\u00e2\u20ac\u201c/g, '-')
+    .replace(/Â /g, ' ')
     .replace(/&amp;/g, '&')
     .replace(/&quot;/g, '"')
     .replace(/&nbsp;/g, ' ')
@@ -85,6 +90,50 @@ const parseFeed = async (xml) => {
   return items;
 };
 
+const cleanOptimoleImage = (value) => {
+  const decoded = decodeEntities(value);
+  const sourceMatch = decoded.match(/https:\/\/www\.awsumnews\.co\.za\/wp-content\/uploads\/[^"'\s>]+\.(?:jpg|jpeg|png|webp)/i);
+  return sourceMatch?.[0] || decoded;
+};
+
+const parseAwsumArchive = (html) => {
+  const titleLinks = [...html.matchAll(/<h4[^>]*class="title"[^>]*>\s*<a[^>]*href="([^"]*bloubergrant-high[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi)];
+  const seen = new Set();
+
+  return titleLinks
+    .map((match) => {
+      const [fullMatch, href, rawTitle] = match;
+      if (seen.has(href)) return null;
+      seen.add(href);
+
+      const matchIndex = match.index || 0;
+      const blockStart = html.lastIndexOf('<li ', matchIndex);
+      const blockEnd = html.indexOf('</li>', matchIndex);
+      const block = html.slice(
+        blockStart === -1 ? Math.max(0, matchIndex - 2400) : blockStart,
+        blockEnd === -1 ? matchIndex + fullMatch.length + 1600 : blockEnd + 5
+      );
+      const image =
+        block.match(/data-opt-src="([^"]+)"/i) ||
+        block.match(/<img[^>]+src="([^"]+)"/i) ||
+        block.match(/<meta itemprop="url" content="([^"]+)"/i);
+      const date = block.match(/<div class="post-date">[\s\S]*?<\/i>([\s\S]*?)<\/div>/i);
+      const excerpt = block.match(/<div class="excerpt">([\s\S]*?)<\/div>/i);
+
+      if (!image) return null;
+
+      return {
+        title: stripHtml(rawTitle),
+        meta: stripHtml(date?.[1] || 'AWSUM School News'),
+        image: cleanOptimoleImage(image[1]),
+        text: stripHtml(excerpt?.[1] || `Recent Bloubergrant High School update: ${stripHtml(rawTitle)}.`),
+        link: decodeEntities(href)
+      };
+    })
+    .filter(Boolean)
+    .slice(0, 6);
+};
+
 const readExisting = async () => {
   try {
     return JSON.parse(await readFile(outputUrl, 'utf8'));
@@ -94,9 +143,16 @@ const readExisting = async () => {
 };
 
 try {
-  const response = await fetch(feedUrl);
-  if (!response.ok) throw new Error(`Feed returned ${response.status}`);
-  const latestNews = await parseFeed(await response.text());
+  const awsumResponse = await fetch(awsumUrl);
+  if (!awsumResponse.ok) throw new Error(`AWSUM archive returned ${awsumResponse.status}`);
+  let latestNews = parseAwsumArchive(await awsumResponse.text());
+
+  if (!latestNews.length) {
+    const response = await fetch(feedUrl);
+    if (!response.ok) throw new Error(`Feed returned ${response.status}`);
+    latestNews = await parseFeed(await response.text());
+  }
+
   if (!latestNews.length) throw new Error('No feed items found');
 
   await mkdir(dirname(fileURLToPath(outputUrl)), { recursive: true });

@@ -18,7 +18,7 @@ export default function Events() {
                 <div className="event-heading">
                   <span className="eyebrow light">Auto-updating</span>
                   <h3>Latest News</h3>
-                  <p>These cards are generated from the latest-news feed on the official Bloubergrant High School website whenever the site builds.</p>
+                  <p>These cards are generated from newer public Bloubergrant school-news posts when the site builds, with the official school feed kept as a fallback.</p>
                 </div>
               </Reveal>
               <div className="event-grid">
