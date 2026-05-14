@@ -8,6 +8,10 @@ export const images = {
   eventIcon: `${site}/2019/02/event-icon.png`,
   foodFairOne: `${site}/2020/05/0a0219b1-153f-4ae2-89c8-ba97a271c7b2-1-225x300.jpg`,
   foodFairTwo: `${site}/2020/05/0e9f84a6-062c-4acf-b60f-bcf680084236-225x300.jpg`,
+  foodFairThree: `${site}/2020/05/09353b57-2207-4288-a57e-3e2c4e295a00-1080x810.jpg`,
+  gradeEightFunDay: `${site}/2020/05/20200118_145403132_iOS.jpg`,
+  gradeEightFunDayTwo: `${site}/2020/05/20200118_150804472_iOS.jpg`,
+  colourRun: `${site}/2019/02/colour-run-1080x675.jpg`,
   schoolLife: `${site}/2020/05/01e067e5-02f4-404a-81a7-8556dbfa2e78-300x225.jpg`,
   pedro: `${site}/2020/05/STAFF-PEDRO-M.H.S_-Export-Students1.jpg`,
   felix: `${site}/2019/06/Staff-7.jpg`,
@@ -86,6 +90,63 @@ export const newsItems = [
   { tag: 'Community', title: '2019 Food Fair', text: 'A gallery-first community story with photo highlights and event atmosphere.' },
   { tag: 'Orientation', title: 'Grade 8 Orientation & Blazer Ceremony', text: 'A welcoming story for new learners, parents, tours and the BHS pledge.' },
   { tag: 'Fundraising', title: 'Colour Run', text: 'A vibrant recap format for fundraisers, school spirit and learner involvement.' }
+];
+
+export const eventSections = [
+  {
+    heading: 'Community Fundraisers',
+    intro: 'School events that bring families, learners and staff together while supporting key school moments.',
+    events: [
+      {
+        title: '2019 Food Fair',
+        meta: 'Community event',
+        image: images.foodFairThree,
+        text: 'A photo-led community highlight with stalls, school spirit and families gathering around the BHS campus.'
+      },
+      {
+        title: 'Colour Run',
+        meta: '26 January 2019',
+        image: images.colourRun,
+        text: 'Bloubergrant High hosted its first Colour Run as a main fundraiser toward the Matric Dance, supported by the Grade 11 fundraising team.'
+      }
+    ]
+  },
+  {
+    heading: 'Grade 8 Welcome Events',
+    intro: 'Orientation moments that help new learners settle into high school life and the BHS identity.',
+    events: [
+      {
+        title: 'Grade 8 Orientation & Blazer Ceremony',
+        meta: 'Latest News',
+        image: images.hero,
+        text: 'New learners toured the school, joined group activities and were officially welcomed as Bergies during the blazer ceremony.'
+      },
+      {
+        title: 'Grade 8 2020 Fun Day',
+        meta: 'School life',
+        image: images.gradeEightFunDay,
+        text: 'Fun Day images capture learners outdoors, taking part in activities and building connection at the start of the year.'
+      }
+    ]
+  },
+  {
+    heading: 'School Life Gallery',
+    intro: 'Extra event snapshots from existing BHS galleries, kept visual and easy to scan.',
+    events: [
+      {
+        title: 'Learner Moments',
+        meta: 'Campus life',
+        image: images.schoolLife,
+        text: 'Everyday moments from the school community, showing learners participating and connecting beyond the classroom.'
+      },
+      {
+        title: 'Food Fair Highlights',
+        meta: 'Photo gallery',
+        image: images.foodFairTwo,
+        text: 'More images from the Food Fair gallery, presented as part of the wider school events story.'
+      }
+    ]
+  }
 ];
 
 export const staff = [
