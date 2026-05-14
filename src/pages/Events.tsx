@@ -7,7 +7,7 @@ import { eventSections } from '../data';
 export default function Events() {
   return (
     <div id="content">
-      <Hero eyebrow="Events" title="Celebrate school" highlight="life." text="School moments, ceremonies, sport, culture, fundraisers and community activities are kept together as event highlights." backgroundImage={anniversaryBackground} />
+      <Hero eyebrow="Events" title="Celebrate school" highlight="life." text="School moments, ceremonies, sport, culture, fundraisers and community activities are kept together as event highlights." backgroundImage={anniversaryBackground} variant="anniversary" />
       <section className="dark">
         <div className="container">
           <Reveal>
