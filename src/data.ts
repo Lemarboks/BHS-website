@@ -94,6 +94,18 @@ export const newsItems = [
 
 export const eventSections = [
   {
+    heading: '20 Year Anniversary',
+    intro: 'A milestone celebration marking two decades since Bloubergrant High School first opened its doors in January 2006.',
+    events: [
+      {
+        title: 'Bloubergrant High School turns 20',
+        meta: '12 January 2026',
+        image: images.hero,
+        text: 'Bloubergrant High School opened its doors on 12 January 2006. The 2026 anniversary marks 20 years of learning, leadership, school pride and community growth in Table View.'
+      }
+    ]
+  },
+  {
     heading: 'Community Fundraisers',
     intro: 'School events that bring families, learners and staff together while supporting key school moments.',
     events: [
