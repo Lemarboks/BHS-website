@@ -1,12 +1,13 @@
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
+import anniversaryBackground from '../assets/images/anniversary-20.svg';
 import { eventSections } from '../data';
 
 export default function Events() {
   return (
     <div id="content">
-      <Hero eyebrow="Events" title="Celebrate school" highlight="life." text="School moments, ceremonies, sport, culture, fundraisers and community activities are kept together as event highlights." />
+      <Hero eyebrow="Events" title="Celebrate school" highlight="life." text="School moments, ceremonies, sport, culture, fundraisers and community activities are kept together as event highlights." backgroundImage={anniversaryBackground} />
       <section className="dark">
         <div className="container">
           <Reveal>

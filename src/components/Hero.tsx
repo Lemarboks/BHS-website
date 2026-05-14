@@ -8,6 +8,7 @@ type HeroProps = {
   title: string;
   highlight?: string;
   text: string;
+  backgroundImage?: string;
   primaryLabel?: string;
   primaryTo?: string;
   secondaryLabel?: string;
@@ -15,9 +16,9 @@ type HeroProps = {
   showCard?: boolean;
 };
 
-export default function Hero({ eyebrow, title, highlight, text, primaryLabel, primaryTo, secondaryLabel, secondaryTo, showCard = false }: HeroProps) {
+export default function Hero({ eyebrow, title, highlight, text, backgroundImage = images.hero, primaryLabel, primaryTo, secondaryLabel, secondaryTo, showCard = false }: HeroProps) {
   return (
-    <section className={`hero ${showCard ? 'hero-home' : 'hero-page'}`} style={{ '--hero-img': `url(${images.hero})` } as CSSProperties}>
+    <section className={`hero ${showCard ? 'hero-home' : 'hero-page'}`} style={{ '--hero-img': `url(${backgroundImage})` } as CSSProperties}>
       <span className="orb one"></span>
       <span className="orb two"></span>
       <div className={`container ${showCard ? 'hero-grid' : 'hero-content'}`}>
