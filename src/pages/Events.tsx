@@ -1,43 +1,45 @@
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
-import latestNews from '../generated/latest-news.json';
+import { eventSections } from '../data';
 
 export default function Events() {
   return (
     <div id="content">
-      <Hero eyebrow="Events" title="Celebrate school" highlight="life." text="Upcoming school moments, ceremonies, sport, culture, fundraisers and community activities are given the same high-energy treatment as the reference design." />
+      <Hero eyebrow="Events" title="Celebrate school" highlight="life." text="School moments, ceremonies, sport, culture, fundraisers and community activities are kept together as event highlights." />
       <section className="dark">
         <div className="container">
           <Reveal>
-            <SectionHeader eyebrow="Highlights" title="Events with energy and movement." text="Real school event stories, photos and moments from the existing Bloubergrant High School site." />
+            <SectionHeader eyebrow="Events" title="Events with energy and movement." text="Event-focused stories, photos and moments from Bloubergrant High School." />
           </Reveal>
           <div className="event-sections">
-            <div className="event-section">
-              <Reveal>
-                <div className="event-heading">
-                  <span className="eyebrow light">Auto-updating</span>
-                  <h3>Latest News</h3>
-                  <p>These cards are generated from newer public Bloubergrant school-news posts when the site builds, with the official school feed kept as a fallback.</p>
+            {eventSections.map((section) => (
+              <div className="event-section" key={section.heading}>
+                <Reveal>
+                  <div className="event-heading">
+                    <span className="eyebrow light">Events</span>
+                    <h3>{section.heading}</h3>
+                    <p>{section.intro}</p>
+                  </div>
+                </Reveal>
+                <div className="event-grid">
+                  {section.events.map((event, index) => (
+                    <Reveal delay={index * 0.08} key={event.title}>
+                      <article className="event-card">
+                        <div className="event-photo">
+                          <img src={event.image} alt={event.title} />
+                        </div>
+                        <div className="event-copy">
+                          <span className="tag">{event.meta}</span>
+                          <h4>{event.title}</h4>
+                          <p>{event.text}</p>
+                        </div>
+                      </article>
+                    </Reveal>
+                  ))}
                 </div>
-              </Reveal>
-              <div className="event-grid">
-                {latestNews.map((event, index) => (
-                  <Reveal delay={index * 0.08} key={`${event.title}-${event.link}`}>
-                    <a className="event-card" href={event.link} target="_blank" rel="noreferrer">
-                      <div className="event-photo">
-                        <img src={event.image} alt={event.title} />
-                      </div>
-                      <div className="event-copy">
-                        <span className="tag">{event.meta}</span>
-                        <h4>{event.title}</h4>
-                        <p>{event.text}</p>
-                      </div>
-                    </a>
-                  </Reveal>
-                ))}
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
