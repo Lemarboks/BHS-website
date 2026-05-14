@@ -10,8 +10,14 @@ export const images = {
   foodFairTwo: `${site}/2020/05/0e9f84a6-062c-4acf-b60f-bcf680084236-225x300.jpg`,
   schoolLife: `${site}/2020/05/01e067e5-02f4-404a-81a7-8556dbfa2e78-300x225.jpg`,
   pedro: `${site}/2020/05/STAFF-PEDRO-M.H.S_-Export-Students1.jpg`,
-  felix: `${site}/2020/05/STAFF-FELIX-A_-Export-Students1.jpg`,
-  tPedro: `${site}/2020/05/STAFF-PEDRO-T_-Export-Students1.jpg`
+  felix: `${site}/2019/06/Staff-7.jpg`,
+  tPedro: `${site}/2019/06/Staff-25.jpg`,
+  rMarks: `${site}/2019/07/Rolandia.jpg`,
+  cPunt: `${site}/2019/06/Staff-27.jpg`,
+  cWegewarth: `${site}/2019/06/Staff-35.jpg`,
+  lSaaiman: `${site}/2019/06/Staff-29.jpg`,
+  mMoses: `${site}/2019/06/Staff-21.jpg`,
+  aVanHeerden: `${site}/2019/06/Staff-34.jpg`
 };
 
 export const school = {
@@ -85,7 +91,28 @@ export const newsItems = [
 export const staff = [
   { name: 'Mr Malcolm H.S Pedro', role: 'Headmaster', image: images.pedro },
   { name: 'Mr A Felix', role: 'Deputy Headmaster - Head of Discipline - Life Orientation Subject Head', image: images.felix },
-  { name: 'Mrs T Pedro', role: 'Head of Department - Head of Academics - Commerce Faculty', image: images.tPedro }
+  { name: 'Mrs T Pedro', role: 'Head of Department - Head of Academics - Commerce Faculty', image: images.tPedro },
+  { name: 'Mrs R Marks', role: 'Head of Department - Phase Head: Gr. 10 & 11 - Afrikaans Faculty', image: images.rMarks },
+  { name: 'Mrs C Punt', role: 'Head of Department - Phase Head: Gr. 8 & 9 - Tourism & Consumer Studies Faculties', image: images.cPunt },
+  { name: 'Mrs C Wegewarth', role: 'Grade 12 Grade Head - Sciences, CAT & Technology Faculties', image: images.cWegewarth },
+  { name: 'Mrs L Saaiman', role: 'Grade 11 Grade Head - Mathematics & Mathematical Literacy', image: images.lSaaiman },
+  { name: 'Ms M Moses', role: 'Gr. 10 Grade Head - Head of English Faculty - Head of Detention', image: images.mMoses },
+  { name: 'Mrs A van Heerden', role: 'Grade 9 Grade Head - GET Mathematics and Mathematical Literacy Faculty', image: images.aVanHeerden }
+];
+
+export const staffSections = [
+  {
+    heading: 'Senior Management Team',
+    people: staff.slice(0, 2)
+  },
+  {
+    heading: 'Heads of Departments',
+    people: staff.slice(2, 5)
+  },
+  {
+    heading: 'Grade Heads',
+    people: staff.slice(5)
+  }
 ];
 
 export const gallery = [

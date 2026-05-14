@@ -311,9 +311,13 @@ section{position:relative;padding:5.7rem 0}
 .photo img{width:100%;height:100%;object-fit:cover;transition:.45s transform}
 .photo:hover img{transform:scale(1.05)}
 .photo span{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:1;font-weight:900;color:#fff}
+.staff-sections{display:grid;gap:2.3rem}
+.staff-section{display:grid;gap:1rem}
+.staff-heading{margin:0;color:#fff;font-size:1.3rem;text-transform:uppercase;letter-spacing:.12em}
 .staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
 .staff-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:10px;overflow:hidden;box-shadow:0 22px 55px rgba(0,0,0,.22)}
-.staff-card img{height:260px;width:100%;object-fit:cover;background:#111827}
+.staff-photo{height:300px;overflow:hidden;background:#111827}
+.staff-photo img{width:100%;height:100%;object-fit:cover;object-position:center 24%;transform:scale(1.18)}
 .staff-card div{padding:1.2rem}
 .staff-card h3{margin:.2rem 0;font-size:1.28rem}
 .staff-card p{color:#cbd5e1;line-height:1.6;margin:.35rem 0}
@@ -427,7 +431,7 @@ textarea{min-height:130px}
   .stats{grid-template-columns:1fr}
   .stat{min-height:auto}
   .motto-panel{padding:2rem;border-radius:10px}
-  .staff-card img{height:220px}
+  .staff-photo{height:250px}
   .card,.contact-panel,.form{padding:1.45rem}
   .hero-card .image{height:230px}
   .icon{width:54px;height:54px}
