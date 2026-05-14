@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/update-latest-news.mjs",
     "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
