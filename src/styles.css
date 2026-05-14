@@ -456,9 +456,19 @@ textarea{min-height:130px}
   }
   .hero:after{width:110%;height:24%;right:-42%;bottom:-8%;opacity:.82}
   .hero-anniversary{
-    --hero-size:100% auto;
-    --hero-position:center 5.5rem;
+    --hero-size:cover;
+    --hero-position:center;
+    min-height:680px;
+    align-items:center;
   }
+  .hero-anniversary:before{
+    background:
+      linear-gradient(90deg,rgba(3,11,24,.92) 0%,rgba(3,11,24,.72) 48%,rgba(3,11,24,.9) 100%),
+      var(--hero-img);
+    background-size:cover;
+    background-position:center;
+  }
+  .hero-anniversary .hero-content{padding:5rem 0 6rem}
   .hero-grid,.hero-content{padding:3.6rem 0 5.2rem}
   .stats{grid-template-columns:repeat(2,1fr)}
   .gallery{grid-auto-rows:230px}
@@ -472,8 +482,8 @@ textarea{min-height:130px}
     --hero-size:auto 58%;
   }
   .hero-anniversary{
-    --hero-size:122% auto;
-    --hero-position:center 5.4rem;
+    --hero-size:cover;
+    --hero-position:center;
   }
   .hero-page{min-height:700px}
   .hero h1{font-size:2.75rem}
@@ -499,7 +509,7 @@ textarea{min-height:130px}
   .brand span{font-size:.82rem}
   .menu{padding:.65rem .72rem}
   .hero{min-height:680px;--hero-size:auto 54%}
-  .hero-anniversary{--hero-size:132% auto;--hero-position:center 5.2rem}
+  .hero-anniversary{--hero-size:cover;--hero-position:center}
   .hero-content{padding-top:16rem}
   .hero-grid{padding-top:14rem}
   .hero h1{font-size:2.35rem}
