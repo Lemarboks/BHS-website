@@ -611,10 +611,25 @@ textarea{min-height:130px}
   .nav-cta{justify-content:center!important;margin-left:0}
   .menu{display:inline-flex}
   .close{display:inline-flex;position:fixed;right:1.4rem;top:calc(1.35rem + env(safe-area-inset-top));z-index:440}
-  .hero-grid,.split,.contact-grid{grid-template-columns:1fr}
-  .cards,.news,.staff-grid,.pill-grid,.event-grid{grid-template-columns:1fr}
+  .hero-grid,.split,.contact-grid,.cards,.news,.staff-grid,.pill-grid,.event-grid{
+    flex-direction:column;
+    flex-wrap:nowrap;
+  }
+  .hero-grid > *,
+  .split > *,
+  .contact-grid > *,
+  .cards > *,
+  .news > *,
+  .staff-grid > *,
+  .pill-grid > *,
+  .event-grid > *{
+    flex:0 0 auto;
+    width:100%;
+    min-width:0;
+  }
   .section-head{display:block}
-  .gallery{grid-template-columns:1fr;grid-auto-rows:260px}
+  .gallery{flex-direction:column;flex-wrap:nowrap}
+  .photo{width:100%;flex:0 0 auto;min-height:260px}
   .photo:first-child{grid-row:span 1;flex-basis:100%;min-height:260px}
   .hero,.hero-page{min-height:680px;padding-top:96px}
   .hero-grid,.hero-content{padding:4rem 0 5.5rem}
