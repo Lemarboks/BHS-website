@@ -112,6 +112,25 @@ button,input,textarea{font:inherit}
   border-radius:999px;
 }
 .nav-cta{background:linear-gradient(135deg,#ff2b33,var(--red-2));color:#fff!important;margin-left:.35rem}
+.theme-toggle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.42rem;
+  min-height:42px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:8px;
+  padding:.72rem .85rem;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.2s transform,.2s background,.2s border-color;
+}
+.theme-toggle:hover{transform:translateY(-1px);background:rgba(255,255,255,.14)}
 .menu,.close{
   display:none;
   align-items:center;
@@ -360,16 +379,101 @@ section{position:relative;padding:5.7rem 0}
 .event-copy{padding:1.4rem}
 .event-copy h4{margin:.9rem 0 .55rem;font-size:1.35rem;line-height:1.12;color:#fff}
 .event-copy p{margin:0;color:#cbd5e1;line-height:1.65}
-.events-page{
+body.theme-anniversary{
   background:#060402;
 }
-.events-page .hero-anniversary{
+body.theme-anniversary .progress{
+  background:linear-gradient(90deg,#5f3708,#ffdf8c,#b57919);
+}
+body.theme-anniversary .site-header{
+  background:rgba(6,4,2,.9);
+  border-color:rgba(247,210,122,.32);
+}
+body.theme-anniversary .nav-links a.active:not(.nav-cta)::after{
+  background:#f7d27a;
+}
+body.theme-anniversary .theme-toggle{
+  color:#1c1002;
+  background:linear-gradient(135deg,#fff0b5,#d59a2d);
+  border-color:rgba(255,223,140,.68);
+}
+body.theme-anniversary .hero:before{
+  background:
+    radial-gradient(circle at 78% 12%,rgba(255,220,126,.2),transparent 24%),
+    linear-gradient(90deg,rgba(4,3,2,.94) 0%,rgba(10,7,3,.78) 45%,rgba(4,3,2,.9) 100%),
+    var(--hero-img);
+  background-size:var(--hero-size);
+  background-position:var(--hero-position);
+  background-repeat:no-repeat;
+}
+body.theme-anniversary .hero:after{
+  background:linear-gradient(135deg,transparent 16%,#f6c767 17%,#b67917 48%,#2b1603 100%);
+}
+body.theme-anniversary .hero .eyebrow,
+body.theme-anniversary .eyebrow.light,
+body.theme-anniversary .eyebrow{
+  color:#f7d27a;
+  text-shadow:0 0 18px rgba(247,210,122,.35);
+}
+body.theme-anniversary .gradient{
+  color:#f0bd4f;
+  text-shadow:0 0 28px rgba(240,189,79,.38);
+}
+body.theme-anniversary .lead{
+  color:#fff0c8;
+}
+body.theme-anniversary .btn.primary,
+body.theme-anniversary .btn.blue,
+body.theme-anniversary .nav-cta{
+  color:#1c1002!important;
+  background:linear-gradient(135deg,#fff0b5,#d59a2d);
+  box-shadow:0 16px 34px rgba(247,210,122,.18);
+}
+body.theme-anniversary .btn.red,
+body.theme-anniversary .hero-actions .ghost{
+  color:#fff;
+  background:linear-gradient(135deg,#5f3708,#1c1002);
+  border-color:rgba(247,210,122,.42);
+}
+body.theme-anniversary .dark{
+  background:
+    linear-gradient(90deg,rgba(246,199,103,.14),transparent 20%,transparent 80%,rgba(246,199,103,.12)),
+    radial-gradient(circle at 14% 0,rgba(247,210,122,.13),transparent 30%),
+    linear-gradient(180deg,#060402 0,#120b03 54%,#050302 100%);
+  border-top:1px solid rgba(247,210,122,.28);
+}
+body.theme-anniversary .light,
+body.theme-anniversary .soft{
+  background:linear-gradient(180deg,#fffaf0 0,#f8f1df 100%);
+}
+body.theme-anniversary .card,
+body.theme-anniversary .news-card,
+body.theme-anniversary .form{
+  border-color:rgba(181,121,25,.24);
+  box-shadow:0 18px 55px rgba(86,51,7,.12);
+}
+body.theme-anniversary .staff-card,
+body.theme-anniversary .event-card,
+body.theme-anniversary .pill,
+body.theme-anniversary .contact-item{
+  border-color:rgba(247,210,122,.28);
+  background:linear-gradient(180deg,rgba(255,248,230,.1),rgba(255,248,230,.045));
+}
+body.theme-anniversary .tag{
+  color:#8a520d;
+  background:linear-gradient(135deg,rgba(247,210,122,.22),rgba(181,121,25,.12));
+  border:1px solid rgba(181,121,25,.24);
+}
+body.theme-anniversary .events-page{
+  background:#060402;
+}
+body.theme-anniversary .events-page .hero-anniversary{
   isolation:isolate;
 }
-.events-page .hero-anniversary{
+body.theme-anniversary .events-page .hero-anniversary{
   background:#050302;
 }
-.events-page .hero-anniversary:before{
+body.theme-anniversary .events-page .hero-anniversary:before{
   background:
     radial-gradient(circle at 78% 12%,rgba(255,220,126,.28),transparent 24%),
     linear-gradient(90deg,rgba(4,3,2,.94) 0%,rgba(10,7,3,.78) 45%,rgba(4,3,2,.9) 100%),
@@ -379,7 +483,7 @@ section{position:relative;padding:5.7rem 0}
   transform:scale(1.02);
   animation:anniversary-hero-glow 9s ease-in-out infinite alternate;
 }
-.events-page .hero-anniversary:after{
+body.theme-anniversary .events-page .hero-anniversary:after{
   width:64%;
   height:30%;
   right:-13%;
@@ -388,7 +492,7 @@ section{position:relative;padding:5.7rem 0}
   background:linear-gradient(135deg,transparent 16%,#f6c767 17%,#b67917 48%,#2b1603 100%);
   animation:anniversary-ribbon 7s ease-in-out infinite alternate;
 }
-.events-page .hero-anniversary .hero-copy:before{
+body.theme-anniversary .events-page .hero-anniversary .hero-copy:before{
   content:"";
   position:absolute;
   inset:-18% -24% -20% -10%;
@@ -398,19 +502,19 @@ section{position:relative;padding:5.7rem 0}
   filter:blur(8px);
   animation:anniversary-copy-aura 5.5s ease-in-out infinite alternate;
 }
-.events-page .hero .eyebrow,
-.events-page .eyebrow.light{
+body.theme-anniversary .events-page .hero .eyebrow,
+body.theme-anniversary .events-page .eyebrow.light{
   color:#f7d27a;
   text-shadow:0 0 20px rgba(247,210,122,.42);
 }
-.events-page .gradient{
+body.theme-anniversary .events-page .gradient{
   color:#f0bd4f;
   text-shadow:0 0 28px rgba(240,189,79,.38);
 }
-.events-page .lead{
+body.theme-anniversary .events-page .lead{
   color:#fff0c8;
 }
-.events-dark{
+body.theme-anniversary .events-dark{
   background:
     linear-gradient(90deg,rgba(246,199,103,.18),transparent 18%,transparent 82%,rgba(246,199,103,.16)),
     radial-gradient(circle at 14% 0,rgba(247,210,122,.16),transparent 30%),
@@ -418,7 +522,7 @@ section{position:relative;padding:5.7rem 0}
     linear-gradient(180deg,#060402 0,#120b03 54%,#050302 100%);
   border-top:1px solid rgba(247,210,122,.38);
 }
-.events-dark:before{
+body.theme-anniversary .events-dark:before{
   content:"";
   position:absolute;
   inset:0;
@@ -429,7 +533,7 @@ section{position:relative;padding:5.7rem 0}
   background-size:42px 42px;
   mask-image:linear-gradient(180deg,rgba(0,0,0,.5),transparent 68%);
 }
-.events-dark:after{
+body.theme-anniversary .events-dark:after{
   content:"";
   position:absolute;
   inset:0;
@@ -442,17 +546,17 @@ section{position:relative;padding:5.7rem 0}
   background-size:140px 160px,190px 180px,170px 210px;
   animation:anniversary-sparkle-drift 16s linear infinite;
 }
-.events-page .section-head h2,
-.events-page .event-heading h3,
-.events-page .event-copy h4{
+body.theme-anniversary .events-page .section-head h2,
+body.theme-anniversary .events-page .event-heading h3,
+body.theme-anniversary .events-page .event-copy h4{
   color:#fff8e6;
 }
-.events-page .section-head{
+body.theme-anniversary .events-page .section-head{
   position:relative;
   padding:1.4rem 0 1.2rem;
 }
-.events-page .section-head:before,
-.events-page .section-head:after{
+body.theme-anniversary .events-page .section-head:before,
+body.theme-anniversary .events-page .section-head:after{
   content:"";
   position:absolute;
   left:0;
@@ -460,18 +564,18 @@ section{position:relative;padding:5.7rem 0}
   height:1px;
   background:linear-gradient(90deg,#f7d27a,transparent);
 }
-.events-page .section-head:before{top:0}
-.events-page .section-head:after{bottom:0}
-.events-page .section-head .eyebrow{
+body.theme-anniversary .events-page .section-head:before{top:0}
+body.theme-anniversary .events-page .section-head:after{bottom:0}
+body.theme-anniversary .events-page .section-head .eyebrow{
   color:#ffdf8c;
   text-shadow:0 0 18px rgba(255,223,140,.48);
 }
-.events-page .section-head p,
-.events-page .event-heading p,
-.events-page .event-copy p{
+body.theme-anniversary .events-page .section-head p,
+body.theme-anniversary .events-page .event-heading p,
+body.theme-anniversary .events-page .event-copy p{
   color:#e8d8b5;
 }
-.events-page .event-card{
+body.theme-anniversary .events-page .event-card{
   position:relative;
   background:
     linear-gradient(180deg,rgba(255,248,230,.13),rgba(255,248,230,.045)),
@@ -480,7 +584,7 @@ section{position:relative;padding:5.7rem 0}
   box-shadow:0 24px 70px rgba(0,0,0,.42),0 0 0 1px rgba(255,223,140,.08),inset 0 1px 0 rgba(255,255,255,.1);
   transition:.3s transform,.3s border-color,.3s box-shadow;
 }
-.events-page .event-card:before{
+body.theme-anniversary .events-page .event-card:before{
   content:"";
   position:absolute;
   inset:0;
@@ -490,26 +594,26 @@ section{position:relative;padding:5.7rem 0}
   transform:translateX(-120%);
   transition:.65s transform;
 }
-.events-page .event-card:hover{
+body.theme-anniversary .events-page .event-card:hover{
   transform:translateY(-8px);
   border-color:rgba(255,217,121,.54);
   box-shadow:0 32px 90px rgba(0,0,0,.42),0 0 34px rgba(247,210,122,.12),inset 0 1px 0 rgba(255,255,255,.12);
 }
-.events-page .event-card:hover:before{
+body.theme-anniversary .events-page .event-card:hover:before{
   transform:translateX(120%);
 }
-.events-page .event-photo{
+body.theme-anniversary .events-page .event-photo{
   background:#140b03;
 }
-.events-page .event-photo img{
+body.theme-anniversary .events-page .event-photo img{
   filter:saturate(1.08) contrast(1.04);
   transition:.5s transform,.5s filter;
 }
-.events-page .event-card:hover .event-photo img{
+body.theme-anniversary .events-page .event-card:hover .event-photo img{
   transform:scale(1.1);
   filter:saturate(1.16) contrast(1.08) brightness(1.05);
 }
-.events-page .tag{
+body.theme-anniversary .events-page .tag{
   background:linear-gradient(135deg,rgba(247,210,122,.22),rgba(181,121,25,.18));
   color:#ffd979;
   border:1px solid rgba(247,210,122,.52);
@@ -607,6 +711,12 @@ textarea{min-height:130px}
     font-size:1.1rem;
     color:#fff;
   }
+  .theme-toggle{
+    justify-content:center;
+    width:100%;
+    padding:1.05rem;
+    font-size:1rem;
+  }
   .nav-links a.active:not(.nav-cta)::after{display:none}
   .nav-cta{justify-content:center!important;margin-left:0}
   .menu{display:inline-flex}
@@ -669,27 +779,27 @@ textarea{min-height:130px}
     background-size:cover;
     background-position:center;
   }
-  .events-page .hero-anniversary:before{
+  body.theme-anniversary .events-page .hero-anniversary:before{
     background:
       linear-gradient(180deg,rgba(4,3,2,.2) 0%,rgba(4,3,2,.6) 45%,rgba(4,3,2,.96) 100%),
       var(--hero-img);
     background-size:cover;
     background-position:center;
   }
-  .events-page .hero-anniversary:after{
+  body.theme-anniversary .events-page .hero-anniversary:after{
     width:112%;
     height:22%;
     right:-45%;
     opacity:.72;
     animation:none;
   }
-  .events-page .hero-anniversary:before,
-  .events-page .hero-anniversary .hero-copy:before,
-  .events-dark:after{
+  body.theme-anniversary .events-page .hero-anniversary:before,
+  body.theme-anniversary .events-page .hero-anniversary .hero-copy:before,
+  body.theme-anniversary .events-dark:after{
     animation:none;
   }
-  .events-page .hero-anniversary .hero-copy:before,
-  .events-dark:after{
+  body.theme-anniversary .events-page .hero-anniversary .hero-copy:before,
+  body.theme-anniversary .events-dark:after{
     display:none;
   }
   .site-header,
@@ -705,11 +815,11 @@ textarea{min-height:130px}
   .form{
     box-shadow:0 12px 32px rgba(0,0,0,.18);
   }
-  .events-page .event-photo img,
-  .events-page .event-card:hover .event-photo img{
+  body.theme-anniversary .events-page .event-photo img,
+  body.theme-anniversary .events-page .event-card:hover .event-photo img{
     filter:none;
   }
-  .events-page .event-card:hover,
+  body.theme-anniversary .events-page .event-card:hover,
   .card:hover,
   .news-card:hover,
   .photo:hover img{

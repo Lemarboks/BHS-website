@@ -1,4 +1,5 @@
 import { Route, Routes, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -21,12 +22,30 @@ const pageMotion = {
   transition: { duration: 0.35, ease: 'easeOut' }
 } as const;
 
+type ThemeMode = 'normal' | 'anniversary';
+
 export default function App() {
   const location = useLocation();
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    if (typeof window === 'undefined') {
+      return 'normal';
+    }
+
+    return localStorage.getItem('bhs-theme') === 'anniversary' ? 'anniversary' : 'normal';
+  });
+
+  useEffect(() => {
+    document.body.classList.toggle('theme-anniversary', theme === 'anniversary');
+    localStorage.setItem('bhs-theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === 'anniversary' ? 'normal' : 'anniversary'));
+  };
 
   return (
     <>
-      <Header />
+      <Header theme={theme} onToggleTheme={toggleTheme} />
       <AnimatePresence mode="wait">
         <motion.main key={location.pathname} {...pageMotion}>
           <Routes location={location}>
