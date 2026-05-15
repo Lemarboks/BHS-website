@@ -399,9 +399,11 @@ section{position:relative;padding:5.7rem 0}
 }
 .events-dark{
   background:
+    linear-gradient(90deg,rgba(246,199,103,.18),transparent 18%,transparent 82%,rgba(246,199,103,.16)),
     radial-gradient(circle at 14% 0,rgba(247,210,122,.16),transparent 30%),
     radial-gradient(circle at 92% 22%,rgba(181,121,25,.22),transparent 28%),
     linear-gradient(180deg,#060402 0,#120b03 54%,#050302 100%);
+  border-top:1px solid rgba(247,210,122,.38);
 }
 .events-dark:before{
   content:"";
@@ -432,6 +434,25 @@ section{position:relative;padding:5.7rem 0}
 .events-page .event-copy h4{
   color:#fff8e6;
 }
+.events-page .section-head{
+  position:relative;
+  padding:1.4rem 0 1.2rem;
+}
+.events-page .section-head:before,
+.events-page .section-head:after{
+  content:"";
+  position:absolute;
+  left:0;
+  width:min(420px,100%);
+  height:1px;
+  background:linear-gradient(90deg,#f7d27a,transparent);
+}
+.events-page .section-head:before{top:0}
+.events-page .section-head:after{bottom:0}
+.events-page .section-head .eyebrow{
+  color:#ffdf8c;
+  text-shadow:0 0 18px rgba(255,223,140,.48);
+}
 .events-page .section-head p,
 .events-page .event-heading p,
 .events-page .event-copy p{
@@ -439,9 +460,11 @@ section{position:relative;padding:5.7rem 0}
 }
 .events-page .event-card{
   position:relative;
-  background:linear-gradient(180deg,rgba(255,248,230,.1),rgba(255,248,230,.045));
-  border-color:rgba(247,210,122,.28);
-  box-shadow:0 24px 70px rgba(0,0,0,.34),inset 0 1px 0 rgba(255,255,255,.08);
+  background:
+    linear-gradient(180deg,rgba(255,248,230,.13),rgba(255,248,230,.045)),
+    radial-gradient(circle at 50% 0,rgba(247,210,122,.16),transparent 42%);
+  border-color:rgba(247,210,122,.44);
+  box-shadow:0 24px 70px rgba(0,0,0,.42),0 0 0 1px rgba(255,223,140,.08),inset 0 1px 0 rgba(255,255,255,.1);
   transition:.3s transform,.3s border-color,.3s box-shadow;
 }
 .events-page .event-card:before{
@@ -474,9 +497,10 @@ section{position:relative;padding:5.7rem 0}
   filter:saturate(1.16) contrast(1.08) brightness(1.05);
 }
 .events-page .tag{
-  background:rgba(247,210,122,.14);
+  background:linear-gradient(135deg,rgba(247,210,122,.22),rgba(181,121,25,.18));
   color:#ffd979;
-  border:1px solid rgba(247,210,122,.32);
+  border:1px solid rgba(247,210,122,.52);
+  box-shadow:0 0 18px rgba(247,210,122,.1);
 }
 @keyframes anniversary-hero-glow{
   from{filter:saturate(1) brightness(.96);transform:scale(1.02)}
