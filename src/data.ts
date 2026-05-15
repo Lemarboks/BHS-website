@@ -21,7 +21,35 @@ export const images = {
   cWegewarth: `${site}/2019/06/Staff-35.jpg`,
   lSaaiman: `${site}/2019/06/Staff-29.jpg`,
   mMoses: `${site}/2019/06/Staff-21.jpg`,
-  aVanHeerden: `${site}/2019/06/Staff-34.jpg`
+  aVanHeerden: `${site}/2019/06/Staff-34.jpg`,
+  fMoyo: `${site}/2019/06/Staff-22.jpg`,
+  cMeyer: `${site}/2019/06/Staff-18.jpg`,
+  aLewis: `${site}/2019/06/Staff-15.jpg`,
+  dSmall: `${site}/2020/05/STAFF-SMALL-D._-Export-Students1.jpg`,
+  aPienaar: `${site}/2022/02/STAFF-PIENAAR-A._-Export-Students1.jpg`,
+  kMorgan: `${site}/2019/06/Staff-20.jpg`,
+  cMbiba: `${site}/2019/06/Staff-17.jpg`,
+  dBotha: `${site}/2022/02/STAFF-BOTHA-D._-Export-Students1.jpg`,
+  dGerstner: `${site}/2022/02/STAFF-GERSTNER-D._-Export-Students1.jpg`,
+  mJones: `${site}/2022/02/STAFF-JONES-M._-Export-Students1.jpg`,
+  eBantom: `${site}/2022/02/STAFF-BANTOM-E._-Export-Students1.jpg`,
+  bGonzo: `${site}/2022/02/STAFF-GONZO-B._-Export-Students1.jpg`,
+  lLeRoux: `${site}/2022/02/STAFF-LE-ROUX-L._-Export-Students1.jpg`,
+  cGoldstone: `${site}/2022/02/STAFF-GOLDSTONE-C._-Export-Students1.jpg`,
+  cDirks: `${site}/2022/02/STAFF-DIRKS-C._-Export-Students1.jpg`,
+  aRoussouw: `${site}/2022/02/STAFF-ROUSSOUW-A._-Export-Students1.jpg`,
+  aBotha: `${site}/2019/06/Staff-2.jpg`,
+  bWhite: `${site}/2022/02/STAFF-WHITE-B._-Export-Students1.jpg`,
+  sDaniels: `${site}/2019/06/Staff-5.jpg`,
+  tNeetling: `${site}/2019/06/Staff-23.jpg`,
+  lSkattie: `${site}/2020/05/STAFF-SKATTIE-L._-Export-Students1.jpg`,
+  mJacobs: `${site}/2019/06/Staff-10.jpg`,
+  jBaatjies: `${site}/2020/05/STAFF-BAATJIES-J._-Export-Students1.jpg`,
+  jJanuary: `${site}/2019/06/Staff-11.jpg`,
+  rBrown: `${site}/2019/06/Staff-3.jpg`,
+  dMaquamba: `${site}/2019/06/Staff-16.jpg`,
+  fDaniels: `${site}/2019/06/Staff-4.jpg`,
+  rSamaai: `${site}/2020/05/STAFF-SAMAAI-R._-Export-Students1.jpg`
 };
 
 export const school = {
@@ -170,7 +198,35 @@ export const staff = [
   { name: 'Mrs C Wegewarth', role: 'Grade 12 Grade Head - Sciences, CAT & Technology Faculties', image: images.cWegewarth },
   { name: 'Mrs L Saaiman', role: 'Grade 11 Grade Head - Mathematics & Mathematical Literacy', image: images.lSaaiman },
   { name: 'Ms M Moses', role: 'Gr. 10 Grade Head - Head of English Faculty - Head of Detention', image: images.mMoses },
-  { name: 'Mrs A van Heerden', role: 'Grade 9 Grade Head - GET Mathematics and Mathematical Literacy Faculty', image: images.aVanHeerden }
+  { name: 'Mrs A van Heerden', role: 'Grade 9 Grade Head - GET Mathematics and Mathematical Literacy Faculty', image: images.aVanHeerden },
+  { name: 'Ms F Moyo', role: 'Grade 8 Grade Head - Business Studies & EMS', image: images.fMoyo },
+  { name: 'Ms C Meyer', role: 'Head of Sports - EMS & Accounting', image: images.cMeyer },
+  { name: 'Ms A Lewis', role: 'Head of Culture - Grade 8 Assistant Grade Head - English Faculty', image: images.aLewis },
+  { name: 'Mrs D Small', role: 'Grade 9 Assistant Grade Head - Life Orientation', image: images.dSmall },
+  { name: 'Mrs A Pienaar', role: 'Grade 10 Assistant Grade Head - Mathematics & Mathematical Literacy', image: images.aPienaar },
+  { name: 'Mrs K Morgan', role: 'Grade 11 Assistant Grade Head - English', image: images.kMorgan },
+  { name: 'Mr C Mbiba', role: 'Grade 12 Assistant Grade Head - History & Social Sciences Faculty', image: images.cMbiba },
+  { name: 'Mrs D Botha', role: 'Class Tutor: Gr. 8B - Subject Head: Life Sciences', image: images.dBotha },
+  { name: 'Ms D Gerstner', role: 'Class Tutor: Gr. 9C - Consumer Studies & Social Sciences', image: images.dGerstner },
+  { name: 'Ms M. Jones', role: 'Class Tutor: Gr. 10B - English Home Language', image: images.mJones },
+  { name: 'Ms E Bantom', role: 'Class Tutor: Gr. 11B - Mathematics & Mathematical Literacy', image: images.eBantom },
+  { name: 'Mr B Gonzo', role: 'Class Tutor: Gr. 11C - Natural Sciences & Life Sciences', image: images.bGonzo },
+  { name: 'Mrs L Le Roux', role: 'Class Tutor: Gr. 11D - Afrikaans', image: images.lLeRoux },
+  { name: 'Mr C Goldstone', role: 'Class Tutor: Gr. 12B - FET Mathematics Subject Head', image: images.cGoldstone },
+  { name: 'Mr C Dirks', role: 'Class Tutor: Gr. 12C - Afrikaans', image: images.cDirks },
+  { name: 'Ms A Roussouw', role: 'Class Tutor: Gr. 12D - Afrikaans', image: images.aRoussouw },
+  { name: 'Mrs A Botha', role: 'Personal Assistant to Headmaster', image: images.aBotha },
+  { name: 'Mrs B White', role: 'Receptionist', image: images.bWhite },
+  { name: 'Mrs S Daniels', role: 'Admin Assistant - Reports, Educpac, Registers', image: images.sDaniels },
+  { name: 'Mrs T Neetling', role: 'School Financial Officer', image: images.tNeetling },
+  { name: 'Ms L Skattie', role: 'School Bursar', image: images.lSkattie },
+  { name: 'Mrs M Jacobs', role: 'Uniform', image: images.mJacobs },
+  { name: 'Mr J Baatjies', role: 'Photocopies / Driver', image: images.jBaatjies },
+  { name: 'Mr J January', role: 'Care Taker - Soccer', image: images.jJanuary },
+  { name: 'Mr R Brown', role: 'Maintenance - Driver - Athletics, Cross Country & Rugby', image: images.rBrown },
+  { name: 'Mr. D. Maquamba', role: 'Gardens', image: images.dMaquamba },
+  { name: 'Mrs F Daniels', role: 'Supervision / Invigilation - Admin Assistant', image: images.fDaniels },
+  { name: 'Mrs R Samaai', role: 'Supervision / Invigilation - Admin Assistant', image: images.rSamaai }
 ];
 
 export const staffSections = [
@@ -184,7 +240,31 @@ export const staffSections = [
   },
   {
     heading: 'Grade Heads',
-    people: staff.slice(5)
+    people: staff.slice(5, 12)
+  },
+  {
+    heading: 'Assistant Grade Heads',
+    people: staff.slice(12, 16)
+  },
+  {
+    heading: 'Teaching Staff',
+    people: staff.slice(16, 25)
+  },
+  {
+    heading: 'Admin Staff',
+    people: staff.slice(25, 28)
+  },
+  {
+    heading: 'Finance Staff',
+    people: staff.slice(28, 32)
+  },
+  {
+    heading: 'Ground Staff',
+    people: staff.slice(32, 35)
+  },
+  {
+    heading: 'Supervision Staff',
+    people: staff.slice(35)
   }
 ];
 
