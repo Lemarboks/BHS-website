@@ -13,7 +13,7 @@ export default function Gallery() {
           <div className="gallery">
             {gallery.map((photo, index) => (
               <Reveal key={photo.title} delay={index * 0.08} className="photo">
-                <img src={photo.image} alt={photo.title} />
+                <img src={photo.image} alt={photo.title} loading={index === 0 ? 'eager' : 'lazy'} decoding="async" />
                 <span>{photo.title}</span>
               </Reveal>
             ))}

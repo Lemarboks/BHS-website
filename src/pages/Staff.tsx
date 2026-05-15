@@ -21,7 +21,7 @@ export default function Staff() {
                     <Reveal delay={index * 0.08} key={person.name}>
                       <article className="staff-card">
                         <div className="staff-photo">
-                          <img src={person.image} alt={person.name} />
+                          <img src={person.image} alt={person.name} loading="lazy" decoding="async" />
                         </div>
                         <div><h3>{person.name}</h3><p>{person.role}</p></div>
                       </article>

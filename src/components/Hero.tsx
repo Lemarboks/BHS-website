@@ -37,7 +37,7 @@ export default function Hero({ eyebrow, title, highlight, text, backgroundImage 
         {showCard && (
           <Reveal className="hero-card">
             <div className="image">
-              <img src={images.hero} alt="Grade 8 Orientation at Bloubergrant High School" />
+              <img src={images.hero} alt="Grade 8 Orientation at Bloubergrant High School" fetchPriority="high" decoding="async" />
             </div>
             <div className="stats">
               <div className="stat"><b>2006</b><span>Opened its doors</span></div>

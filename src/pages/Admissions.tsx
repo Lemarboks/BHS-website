@@ -17,7 +17,7 @@ export default function Admissions() {
             {pathways.map((card, index) => (
               <Reveal key={card.title} delay={index * 0.08}>
                 <Link className="card full" to={card.path}>
-                  <div className="icon"><img src={card.image} alt="" /></div>
+                  <div className="icon"><img src={card.image} alt="" loading="lazy" decoding="async" /></div>
                   <h3>{card.title}</h3>
                   <p>{card.text}</p>
                   <span className="btn blue">{card.cta}</span>

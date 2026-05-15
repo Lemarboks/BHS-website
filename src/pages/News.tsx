@@ -21,7 +21,7 @@ export default function News() {
               <Reveal delay={index * 0.08} key={`${item.title}-${item.link}`}>
                 <a className="news-card" href={item.link} target="_blank" rel="noreferrer">
                   <div className="news-photo">
-                    <img src={item.image} alt={item.title} />
+                    <img src={item.image} alt={item.title} loading="lazy" decoding="async" />
                   </div>
                   <div className="news-copy">
                     <span className="tag">{item.meta}</span>

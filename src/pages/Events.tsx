@@ -28,7 +28,7 @@ export default function Events() {
                     <Reveal delay={index * 0.08} key={event.title}>
                       <article className="event-card">
                         <div className="event-photo">
-                          <img src={event.image} alt={event.title} />
+                          <img src={event.image} alt={event.title} loading="lazy" decoding="async" />
                         </div>
                         <div className="event-copy">
                           <span className="tag">{event.meta}</span>

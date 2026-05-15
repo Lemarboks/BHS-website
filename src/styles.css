@@ -325,6 +325,7 @@ section{position:relative;padding:5.7rem 0}
 .photo span{position:absolute;left:1rem;right:1rem;bottom:1rem;z-index:1;font-weight:900;color:#fff}
 .staff-sections{display:flex;flex-direction:column;gap:2.3rem}
 .staff-section{display:flex;flex-direction:column;gap:1rem}
+.staff-section,.event-section{content-visibility:auto;contain-intrinsic-size:760px}
 .staff-heading{margin:0;color:#fff;font-size:1.3rem;text-transform:uppercase;letter-spacing:.12em}
 .staff-grid{display:flex;flex-wrap:wrap;gap:1rem}
 .staff-grid > *{flex:1 1 260px;min-width:min(100%,240px)}
@@ -665,6 +666,39 @@ textarea{min-height:130px}
     height:22%;
     right:-45%;
     opacity:.72;
+    animation:none;
+  }
+  .events-page .hero-anniversary:before,
+  .events-page .hero-anniversary .hero-copy:before,
+  .events-dark:after{
+    animation:none;
+  }
+  .events-page .hero-anniversary .hero-copy:before,
+  .events-dark:after{
+    display:none;
+  }
+  .site-header,
+  .hero-card{
+    backdrop-filter:none;
+  }
+  .card,
+  .photo,
+  .staff-card,
+  .event-card,
+  .news-card,
+  .contact-panel,
+  .form{
+    box-shadow:0 12px 32px rgba(0,0,0,.18);
+  }
+  .events-page .event-photo img,
+  .events-page .event-card:hover .event-photo img{
+    filter:none;
+  }
+  .events-page .event-card:hover,
+  .card:hover,
+  .news-card:hover,
+  .photo:hover img{
+    transform:none;
   }
   .hero-anniversary .hero-content{padding:5rem 0 6rem}
   .hero-grid,.hero-content{padding:3.6rem 0 5.2rem}
