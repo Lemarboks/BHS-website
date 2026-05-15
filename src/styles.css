@@ -735,6 +735,36 @@ textarea{min-height:130px}
 .anniversary-modal .btn{
   margin-top:1rem;
 }
+.anniversary-modal-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.8rem;
+  align-items:center;
+  margin-top:1rem;
+}
+.anniversary-modal-actions .btn{
+  margin-top:0;
+}
+.anniversary-modal-theme{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.6rem;
+  min-height:46px;
+  border:1px solid rgba(181,121,25,.26);
+  border-radius:999px;
+  padding:.8rem 1rem;
+  background:#fff;
+  color:#8a520d;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 14px 34px rgba(181,121,25,.12);
+}
+.anniversary-modal-theme[aria-pressed="true"]{
+  color:#1c1002;
+  background:linear-gradient(135deg,#fff0b5,#d59a2d);
+  border-color:rgba(181,121,25,.42);
+}
 
 body.theme-anniversary .anniversary-modal{
   background:rgba(3,2,1,.78);
@@ -753,6 +783,15 @@ body.theme-anniversary .anniversary-modal-close{
   color:#fff8e6;
   background:rgba(255,255,255,.08);
   border-color:rgba(247,210,122,.28);
+}
+body.theme-anniversary .anniversary-modal-theme{
+  color:#fff8e6;
+  background:rgba(255,255,255,.08);
+  border-color:rgba(247,210,122,.3);
+}
+body.theme-anniversary .anniversary-modal-theme[aria-pressed="true"]{
+  color:#1c1002;
+  background:linear-gradient(135deg,#fff0b5,#d59a2d);
 }
 
 @media(max-width:1180px){
@@ -843,6 +882,9 @@ body.theme-anniversary .anniversary-modal-close{
     padding:1.65rem;
   }
   .anniversary-modal .btn{
+    width:100%;
+  }
+  .anniversary-modal-theme{
     width:100%;
   }
   .hero{

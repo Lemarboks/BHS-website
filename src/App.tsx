@@ -27,13 +27,7 @@ type ThemeMode = 'normal' | 'anniversary';
 
 export default function App() {
   const location = useLocation();
-  const [showAnniversaryNotice, setShowAnniversaryNotice] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false;
-    }
-
-    return localStorage.getItem('bhs-anniversary-notice-seen') !== 'true';
-  });
+  const [showAnniversaryNotice, setShowAnniversaryNotice] = useState(true);
   const [theme, setTheme] = useState<ThemeMode>(() => {
     if (typeof window === 'undefined') {
       return 'normal';
@@ -52,7 +46,6 @@ export default function App() {
   };
 
   const closeAnniversaryNotice = () => {
-    localStorage.setItem('bhs-anniversary-notice-seen', 'true');
     setShowAnniversaryNotice(false);
   };
 
@@ -78,9 +71,15 @@ export default function App() {
               To view the anniversary-inspired design, use the theme switch button in the bottom-right corner of the
               website.
             </p>
-            <button className="btn primary" type="button" onClick={closeAnniversaryNotice}>
-              Continue to website
-            </button>
+            <div className="anniversary-modal-actions">
+              <button className="anniversary-modal-theme" type="button" aria-pressed={theme === 'anniversary'} onClick={toggleTheme}>
+                <Sparkles size={21} />
+                <span>{theme === 'anniversary' ? 'Normal theme' : 'Anniversary theme'}</span>
+              </button>
+              <button className="btn primary" type="button" onClick={closeAnniversaryNotice}>
+                Continue to website
+              </button>
+            </div>
           </div>
         </div>
       )}
