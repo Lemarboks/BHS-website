@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, Sparkles, Sun, X } from 'lucide-react';
+import { Menu, Sparkles, X } from 'lucide-react';
 import { navItems, school } from '../data';
 import BadgeLogo from './BadgeLogo';
 
@@ -12,7 +12,6 @@ type HeaderProps = {
 export default function Header({ theme, onToggleTheme }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
-  const isAnniversary = theme === 'anniversary';
 
   useEffect(() => {
     const onScroll = () => {
@@ -68,22 +67,21 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
                 {item.label}
               </NavLink>
             ))}
-            <button
-              className="theme-toggle"
-              type="button"
-              aria-pressed={isAnniversary}
-              aria-label={`Switch to ${isAnniversary ? 'normal' : 'anniversary'} theme`}
-              onClick={onToggleTheme}
-            >
-              {isAnniversary ? <Sun size={17} /> : <Sparkles size={17} />}
-              <span>{isAnniversary ? 'Normal' : 'Anniversary'}</span>
-            </button>
             <NavLink className="btn primary nav-cta" to="/admissions" onClick={() => setOpen(false)}>
               Admissions
             </NavLink>
           </nav>
         </div>
       </header>
+      <button
+        className="theme-toggle"
+        type="button"
+        aria-pressed={theme === 'anniversary'}
+        aria-label={`Switch to ${theme === 'anniversary' ? 'normal' : 'anniversary'} theme`}
+        onClick={onToggleTheme}
+      >
+        <Sparkles size={22} />
+      </button>
     </>
   );
 }
