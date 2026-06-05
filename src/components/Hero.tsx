@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { CSSProperties } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import Reveal from './Reveal';
 import { images, school } from '../data';
 import heroBackgroundVideo from '../assets/videos/hero-background.mp4';
@@ -13,6 +13,7 @@ type HeroProps = {
   backgroundImage?: string;
   cardImage?: string;
   cardImageAlt?: string;
+  cardMedia?: ReactNode;
   variant?: 'default' | 'anniversary';
   primaryLabel?: string;
   primaryTo?: string;
@@ -21,7 +22,7 @@ type HeroProps = {
   showCard?: boolean;
 };
 
-export default function Hero({ eyebrow, title, highlight, text, backgroundImage = images.hero, cardImage = images.hero, cardImageAlt = 'Grade 8 Orientation at Bloubergrant High School', variant = 'default', primaryLabel, primaryTo, secondaryLabel, secondaryTo, showCard = false }: HeroProps) {
+export default function Hero({ eyebrow, title, highlight, text, backgroundImage = images.hero, cardImage = images.hero, cardImageAlt = 'Grade 8 Orientation at Bloubergrant High School', cardMedia, variant = 'default', primaryLabel, primaryTo, secondaryLabel, secondaryTo, showCard = false }: HeroProps) {
   return (
     <section className={`hero hero-${variant} ${showCard ? 'hero-home' : 'hero-page'}`} style={{ '--hero-img': `url(${heroBackgroundPoster || backgroundImage})` } as CSSProperties}>
       <span className="hero-fallback" aria-hidden="true"></span>
@@ -53,7 +54,7 @@ export default function Hero({ eyebrow, title, highlight, text, backgroundImage 
         {showCard && (
           <Reveal className="hero-card">
             <div className="image">
-              <img src={cardImage} alt={cardImageAlt} fetchPriority="high" decoding="async" />
+              {cardMedia ?? <img src={cardImage} alt={cardImageAlt} fetchPriority="high" decoding="async" />}
             </div>
             <div className="stats">
               <div className="stat"><b>2006</b><span>Opened its doors</span></div>
