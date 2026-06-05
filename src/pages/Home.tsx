@@ -84,7 +84,7 @@ export default function Home() {
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
                   <Link className="card full" to={card.path}>
-                    <div className="icon">
+                    <div className="icon pathway-icon">
                       <img className="pathway-custom-icon" src={customIcon} alt="" loading="lazy" decoding="async" />
                     </div>
                     <h3>{card.title}</h3>
