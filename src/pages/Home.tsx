@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CalendarDays, Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
+import { Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
@@ -7,6 +7,7 @@ import { pathways, school, values } from '../data';
 import badgeLogo from '../assets/images/bhs-badge.png';
 import admissionCheckIcon from '../assets/images/admission-check-icon.svg';
 import resourcesBookIcon from '../assets/images/resources-book-icon.svg';
+import eventsCalendarIcon from '../assets/images/events-calendar-icon.svg';
 
 const valueIcons = {
   shield: ShieldCheck,
@@ -14,13 +15,10 @@ const valueIcons = {
   graduation: GraduationCap
 };
 
-const pathwayIcons = {
-  Events: CalendarDays
-};
-
 const customPathwayIcons = {
   Admission: admissionCheckIcon,
-  Resources: resourcesBookIcon
+  Resources: resourcesBookIcon,
+  Events: eventsCalendarIcon
 };
 
 export default function Home() {
@@ -82,17 +80,12 @@ export default function Home() {
           <Reveal><SectionHeader eyebrow="Admissions, resources, events" title="Three clear pathways for families." text="Fast navigation for the pages parents and learners look for most." /></Reveal>
           <div className="cards">
             {pathways.map((card, index) => {
-              const Icon = pathwayIcons[card.title as keyof typeof pathwayIcons];
               const customIcon = customPathwayIcons[card.title as keyof typeof customPathwayIcons];
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
                   <Link className="card full" to={card.path}>
                     <div className="icon">
-                      {customIcon ? (
-                        <img className="pathway-custom-icon" src={customIcon} alt="" loading="lazy" decoding="async" />
-                      ) : (
-                        <Icon size={34} />
-                      )}
+                      <img className="pathway-custom-icon" src={customIcon} alt="" loading="lazy" decoding="async" />
                     </div>
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Events">
+  <path d="M6 36c0-8 6-14 14-14h140c8 0 14 6 14 14v128c0 8-6 14-14 14H20c-8 0-14-6-14-14Z" fill="#fff" stroke="#1478f2" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M6 36c0-8 6-14 14-14h140c8 0 14 6 14 14v32H6Z" fill="#cfe3f7" stroke="#1478f2" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M36 12v24M72 12v24M108 12v24M144 12v24" fill="none" stroke="#1478f2" stroke-width="9" stroke-linecap="round"/>
+  <path d="M6 146c0 8 6 14 14 14h140c8 0 14-6 14-14v16c0 8-6 14-14 14H20c-8 0-14-6-14-14Z" fill="#cfe3f7" stroke="#1478f2" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M88 82 104 114l35 5-25 24 6 35-32-17-31 17 6-35-25-24 35-5Z" fill="#cfe3f7" stroke="#1478f2" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M174 126c-22 8-31 19-36 39 21-5 32-14 39-36Z" fill="#fff" stroke="#1478f2" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M6 154h132M6 166h160" fill="none" stroke="#1478f2" stroke-width="6" stroke-linecap="round"/>
+</svg>
