@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Resources">
+  <path d="M8 55c29-5 57 0 82 17 25-17 53-22 82-17v126c-29-7-57-5-82 16-25-21-53-23-82-16Z" fill="#bd5aa5" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M24 38c24-2 47 2 66 18v126c-19-16-42-20-66-18Z" fill="#ffd082" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M90 56c19-16 42-20 66-18v126c-24-2-47 2-66 18Z" fill="#ffd082" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M43 78h19M43 96h28M43 114h34M43 133h42M43 151h42M137 78h-19M137 96h-28M137 114h-34M117 133h-32M117 151H85" fill="none" stroke="#05080c" stroke-width="5" stroke-linecap="round"/>
+  <path d="M90 127v27" fill="none" stroke="#05080c" stroke-width="5" stroke-linecap="round"/>
+  <path d="M61 46c0-29 23-52 52-52s52 23 52 52c0 19-10 34-24 43v24H85V89C71 80 61 65 61 46Z" fill="#ffd91f" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M84 112h57v12c0 16-13 28-28 28s-28-12-28-28Z" fill="#d8dde3" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M84 112h57M87 128h51" fill="none" stroke="#05080c" stroke-width="5" stroke-linecap="round"/>
+  <path d="m116 18 11 4 8-8 14 14-8 8 4 11h12v20h-12l-4 11 8 8-14 14-8-8-11 4v12H96V96l-11-4-8 8-14-14 8-8-4-11H55V47h12l4-11-8-8 14-14 8 8 11-4V6h20Z" fill="#68717d" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="106" cy="57" r="22" fill="#dfe7ff" stroke="#05080c" stroke-width="6"/>
+</svg>

@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import { BookOpenCheck, CalendarDays, Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
+import { CalendarDays, Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
 import { pathways, school, values } from '../data';
 import badgeLogo from '../assets/images/bhs-badge.png';
 import admissionCheckIcon from '../assets/images/admission-check-icon.svg';
+import resourcesBookIcon from '../assets/images/resources-book-icon.svg';
 
 const valueIcons = {
   shield: ShieldCheck,
@@ -14,8 +15,12 @@ const valueIcons = {
 };
 
 const pathwayIcons = {
-  Resources: BookOpenCheck,
   Events: CalendarDays
+};
+
+const customPathwayIcons = {
+  Admission: admissionCheckIcon,
+  Resources: resourcesBookIcon
 };
 
 export default function Home() {
@@ -78,12 +83,13 @@ export default function Home() {
           <div className="cards">
             {pathways.map((card, index) => {
               const Icon = pathwayIcons[card.title as keyof typeof pathwayIcons];
+              const customIcon = customPathwayIcons[card.title as keyof typeof customPathwayIcons];
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
                   <Link className="card full" to={card.path}>
                     <div className="icon">
-                      {card.title === 'Admission' ? (
-                        <img className="pathway-custom-icon" src={admissionCheckIcon} alt="" loading="lazy" decoding="async" />
+                      {customIcon ? (
+                        <img className="pathway-custom-icon" src={customIcon} alt="" loading="lazy" decoding="async" />
                       ) : (
                         <Icon size={34} />
                       )}
