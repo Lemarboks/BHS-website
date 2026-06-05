@@ -82,12 +82,6 @@ export const pathways = [
   { title: 'Events', text: 'Upcoming school moments, ceremonies, sport, culture, fundraisers and community activities.', path: '/events', image: images.eventIcon, cta: 'See events' }
 ];
 
-export const values = [
-  { title: 'Integrity-led', text: 'The website places the motto at the centre of the school story and turns it into a clear values message.', icon: 'shield' },
-  { title: 'Diverse community', text: 'The copy celebrates the multicultural learner population and welcoming high-school environment.', icon: 'globe' },
-  { title: 'Personal attention', text: 'Smaller-school strengths are highlighted for parents who want daily educator support and belonging.', icon: 'graduation' }
-];
-
 export const timeline = [
   { year: '12 January 2006', text: 'Bloubergrant High School opened its doors of learning for the first time.' },
   { year: '14 January 2006', text: 'The school was officially opened by Western Cape education and provincial leadership.' },

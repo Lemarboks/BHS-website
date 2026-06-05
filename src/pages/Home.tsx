@@ -1,19 +1,12 @@
 import { Link } from 'react-router-dom';
-import { Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
-import { pathways, school, values } from '../data';
+import { pathways, school } from '../data';
 import badgeLogo from '../assets/images/bhs-badge.png';
 import admissionCheckIcon from '../assets/images/admission-check-icon.svg';
 import resourcesBookIcon from '../assets/images/resources-book-icon.svg';
 import eventsCalendarIcon from '../assets/images/events-calendar-icon.svg';
-
-const valueIcons = {
-  shield: ShieldCheck,
-  globe: Globe2,
-  graduation: GraduationCap
-};
 
 const customPathwayIcons = {
   Admission: admissionCheckIcon,
@@ -58,20 +51,6 @@ export default function Home() {
             <p>Bloubergrant High School was established in January 2006 and has grown ever since, with its first matriculants completing Grade 12 in 2009.</p>
             <p>The school describes itself as a diverse learning community with learners from different walks of life, races, creeds and cultures. Because BHS is a relatively small school, learners benefit from small classes and personal attention from educators.</p>
           </Reveal>
-        </div>
-        <div className="container cards value-cards">
-          {values.map((item, index) => {
-            const Icon = valueIcons[item.icon as keyof typeof valueIcons];
-            return (
-              <Reveal key={item.title} delay={index * 0.08}>
-                <div className="card full">
-                  <div className="icon"><Icon size={34} /></div>
-                  <h3>{item.title}</h3>
-                  <p>{item.text}</p>
-                </div>
-              </Reveal>
-            );
-          })}
         </div>
       </section>
 
