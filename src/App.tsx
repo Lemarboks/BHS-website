@@ -13,7 +13,6 @@ import Resources from './pages/Resources';
 import Events from './pages/Events';
 import News from './pages/News';
 import Staff from './pages/Staff';
-import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 
 const pageMotion = {
@@ -95,7 +94,6 @@ export default function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/news" element={<News />} />
             <Route path="/staff" element={<Staff />} />
-            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </motion.main>

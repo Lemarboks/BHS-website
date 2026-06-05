@@ -73,7 +73,6 @@ export const navItems = [
   { label: 'Events', path: '/events' },
   { label: 'News', path: '/news' },
   { label: 'Staff', path: '/staff' },
-  { label: 'Gallery', path: '/gallery' },
   { label: 'Contact', path: '/contact' }
 ];
 
@@ -266,12 +265,4 @@ export const staffSections = [
     heading: 'Supervision Staff',
     people: staff.slice(35)
   }
-];
-
-export const gallery = [
-  { title: 'Grade 8 Orientation & Blazer Ceremony', image: images.hero },
-  { title: '2019 Food Fair', image: images.foodFairOne },
-  { title: 'Community events', image: images.foodFairTwo },
-  { title: 'Learner moments', image: images.schoolLife },
-  { title: 'Bloubergrant identity', image: images.logo }
 ];
