@@ -83,7 +83,7 @@ export default function Home() {
               const customIcon = customPathwayIcons[card.title as keyof typeof customPathwayIcons];
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
-                  <Link className="card full" to={card.path}>
+                  <Link className="card full pathway-card" to={card.path}>
                     <div className="icon pathway-icon">
                       <img className="pathway-custom-icon" src={customIcon} alt="" loading="lazy" decoding="async" />
                     </div>
