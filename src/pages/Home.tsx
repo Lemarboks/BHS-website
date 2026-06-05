@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
+import { BookOpenCheck, CalendarDays, ClipboardCheck, Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
@@ -10,6 +10,12 @@ const valueIcons = {
   shield: ShieldCheck,
   globe: Globe2,
   graduation: GraduationCap
+};
+
+const pathwayIcons = {
+  Admission: ClipboardCheck,
+  Resources: BookOpenCheck,
+  Events: CalendarDays
 };
 
 export default function Home() {
@@ -70,16 +76,19 @@ export default function Home() {
         <div className="container">
           <Reveal><SectionHeader eyebrow="Admissions, resources, events" title="Three clear pathways for families." text="Fast navigation for the pages parents and learners look for most." /></Reveal>
           <div className="cards">
-            {pathways.map((card, index) => (
-              <Reveal key={card.title} delay={index * 0.08}>
-                <Link className="card full" to={card.path}>
-                  <div className="icon"><img src={card.image} alt="" loading="lazy" decoding="async" /></div>
-                  <h3>{card.title}</h3>
-                  <p>{card.text}</p>
-                  <span className="btn blue">{card.cta}</span>
-                </Link>
-              </Reveal>
-            ))}
+            {pathways.map((card, index) => {
+              const Icon = pathwayIcons[card.title as keyof typeof pathwayIcons];
+              return (
+                <Reveal key={card.title} delay={index * 0.08}>
+                  <Link className="card full" to={card.path}>
+                    <div className="icon"><Icon size={34} /></div>
+                    <h3>{card.title}</h3>
+                    <p>{card.text}</p>
+                    <span className="btn blue">{card.cta}</span>
+                  </Link>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
