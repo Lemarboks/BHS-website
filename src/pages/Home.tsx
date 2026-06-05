@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { BookOpenCheck, CalendarDays, ClipboardCheck, Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
+import { BookOpenCheck, CalendarDays, Globe2, GraduationCap, ShieldCheck } from 'lucide-react';
 import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
 import { pathways, school, values } from '../data';
 import badgeLogo from '../assets/images/bhs-badge.png';
+import admissionCheckIcon from '../assets/images/admission-check-icon.svg';
 
 const valueIcons = {
   shield: ShieldCheck,
@@ -13,7 +14,6 @@ const valueIcons = {
 };
 
 const pathwayIcons = {
-  Admission: ClipboardCheck,
   Resources: BookOpenCheck,
   Events: CalendarDays
 };
@@ -81,7 +81,13 @@ export default function Home() {
               return (
                 <Reveal key={card.title} delay={index * 0.08}>
                   <Link className="card full" to={card.path}>
-                    <div className="icon"><Icon size={34} /></div>
+                    <div className="icon">
+                      {card.title === 'Admission' ? (
+                        <img className="pathway-custom-icon" src={admissionCheckIcon} alt="" loading="lazy" decoding="async" />
+                      ) : (
+                        <Icon size={34} />
+                      )}
+                    </div>
                     <h3>{card.title}</h3>
                     <p>{card.text}</p>
                     <span className="btn blue">{card.cta}</span>

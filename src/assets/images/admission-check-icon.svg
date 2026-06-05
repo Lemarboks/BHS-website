@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="Admissions">
+  <path d="M10 35 82 8l72 27v12H10Z" fill="#9fb3c9" stroke="#05080c" stroke-width="7" stroke-linejoin="round"/>
+  <circle cx="84" cy="14" r="10" fill="#dce5ef" stroke="#05080c" stroke-width="6"/>
+  <path d="M22 47h15v103H22zM128 47h15v103h-15z" fill="#dce5ef" stroke="#05080c" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M12 150h47v13H12zM116 150h47v13h-47z" fill="#8fa6bf" stroke="#05080c" stroke-width="7" stroke-linejoin="round"/>
+  <path d="m52 72 40-13 40 13-40 15Z" fill="#9d90a9" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M58 75v25c18 9 47 9 64 0V75L92 87Z" fill="#b4a7bd" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M126 75v37" fill="none" stroke="#05080c" stroke-width="6" stroke-linecap="round"/>
+  <path d="M117 118c0-12 18-12 18 0v13h-18Z" fill="#ffd84d" stroke="#05080c" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="130" cy="132" r="38" fill="#99d7ff" stroke="#05080c" stroke-width="7"/>
+  <path d="m110 131 17 17 34-38" fill="none" stroke="#05080c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m111 130 16 16 33-37" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
