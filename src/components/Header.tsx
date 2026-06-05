@@ -63,13 +63,15 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
               <X size={18} /> Close
             </button>
             {navItems.map((item) => (
-              <NavLink key={item.path} to={item.path} onClick={() => setOpen(false)}>
+              <NavLink
+                key={item.path}
+                className={({ isActive }) => `${isActive ? 'active ' : ''}${item.path === '/contact' ? 'btn primary nav-cta' : ''}`.trim()}
+                to={item.path}
+                onClick={() => setOpen(false)}
+              >
                 {item.label}
               </NavLink>
             ))}
-            <NavLink className="btn primary nav-cta" to="/admissions" onClick={() => setOpen(false)}>
-              Admissions
-            </NavLink>
           </nav>
         </div>
       </header>
