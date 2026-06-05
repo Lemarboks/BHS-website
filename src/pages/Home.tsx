@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Reveal from '../components/Reveal';
 import SectionHeader from '../components/SectionHeader';
 import { pathways, school, values } from '../data';
+import purveyorsQualityEducation from '../assets/images/purveyors-quality-education.svg';
 
 const valueIcons = {
   shield: ShieldCheck,
@@ -23,6 +24,8 @@ export default function Home() {
         primaryTo="/admissions"
         secondaryLabel="Explore the school"
         secondaryTo="/about"
+        cardImage={purveyorsQualityEducation}
+        cardImageAlt="Purveyors of Quality Education"
         showCard
       />
 
