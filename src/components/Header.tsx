@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, Sparkles, X } from 'lucide-react';
+import { Menu, Sparkles } from 'lucide-react';
 import { navItems, school } from '../data';
 import BadgeLogo from './BadgeLogo';
 
@@ -56,9 +56,6 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
             <Menu size={22} />
           </button>
           <nav id="main-navigation" className={`nav-links ${open ? 'open' : ''}`} aria-label="Main navigation">
-            <button className="close" aria-label="Close menu" onClick={() => setOpen(false)}>
-              <X size={18} /> Close
-            </button>
             {navItems.map((item) => (
               <NavLink
                 key={item.path}

@@ -133,7 +133,7 @@ button,input,textarea{font:inherit}
   transition:.2s transform,.2s background,.2s border-color,.2s color;
 }
 .theme-toggle:hover{transform:translateY(-2px);background:rgba(11,32,66,.94)}
-.menu,.close{
+.menu{
   display:none;
   align-items:center;
   justify-content:center;
@@ -934,13 +934,6 @@ body.theme-anniversary .anniversary-modal-theme[aria-pressed="true"]{
   .nav-links a.active:not(.nav-cta)::after{display:none}
   .nav-cta{justify-content:center!important;margin-left:0}
   .menu{display:inline-flex}
-  .close{
-    display:inline-flex;
-    justify-content:center;
-    width:100%;
-    margin-bottom:.25rem;
-    background:rgba(255,255,255,.06);
-  }
   .hero-grid,.split,.contact-grid,.cards,.news,.staff-grid,.pill-grid,.event-grid{
     flex-direction:column;
     flex-wrap:nowrap;
