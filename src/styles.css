@@ -904,14 +904,14 @@ body.theme-anniversary .anniversary-modal-theme[aria-pressed="true"]{
     top:calc(100% + 10px);
     right:0;
     z-index:420;
-    width:min(360px,calc(100vw - 24px));
+    width:min(250px,calc(100vw - 24px));
     max-height:calc(100dvh - 104px);
     background:rgba(5,16,32,.96);
     border:1px solid rgba(255,255,255,.18);
-    border-radius:18px;
-    padding:.8rem;
+    border-radius:16px;
+    padding:.55rem;
     align-items:stretch;
-    gap:.45rem;
+    gap:.32rem;
     flex-direction:column;
     overflow-y:auto;
     overscroll-behavior:contain;
@@ -924,15 +924,17 @@ body.theme-anniversary .anniversary-modal-theme[aria-pressed="true"]{
     align-items:center;
     justify-content:space-between;
     width:100%;
-    border-radius:8px;
+    border-radius:7px;
     background:rgba(255,255,255,.075);
     border:1px solid rgba(255,255,255,.12);
-    padding:.82rem .9rem;
-    font-size:.86rem;
+    padding:.62rem .72rem;
+    font-size:.74rem;
+    line-height:1.1;
+    white-space:nowrap;
     color:#fff;
   }
   .nav-links a.active:not(.nav-cta)::after{display:none}
-  .nav-cta{justify-content:center!important;margin-left:0}
+  .nav-cta{justify-content:center!important;margin-left:0;min-height:38px}
   .menu{display:inline-flex}
   .hero-grid,.split,.contact-grid,.cards,.news,.staff-grid,.pill-grid,.event-grid{
     flex-direction:column;
