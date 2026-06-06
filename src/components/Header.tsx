@@ -52,8 +52,8 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
             <span className="sr-only">Bloubergrant High School logo</span>
             <span><small>High School</small>{school.name}</span>
           </Link>
-          <button className="menu" aria-label="Open menu" aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(true)}>
-            <Menu size={18} /> Menu
+          <button className="menu" aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen((current) => !current)}>
+            <Menu size={22} />
           </button>
           <nav id="main-navigation" className={`nav-links ${open ? 'open' : ''}`} aria-label="Main navigation">
             <button className="close" aria-label="Close menu" onClick={() => setOpen(false)}>

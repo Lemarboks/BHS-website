@@ -136,6 +136,7 @@ button,input,textarea{font:inherit}
 .menu,.close{
   display:none;
   align-items:center;
+  justify-content:center;
   gap:.45rem;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.22);
@@ -145,7 +146,7 @@ button,input,textarea{font:inherit}
   font-weight:900;
   cursor:pointer;
 }
-.menu{position:relative;z-index:340}
+.menu{position:relative;z-index:340;width:46px;height:46px;padding:0}
 
 .hero{
   position:relative;
