@@ -23,10 +23,17 @@ const pageMotion = {
 } as const;
 
 type ThemeMode = 'normal' | 'anniversary';
+const anniversaryNoticeStorageKey = 'bhs-anniversary-notice-seen';
 
 export default function App() {
   const location = useLocation();
-  const [showAnniversaryNotice, setShowAnniversaryNotice] = useState(true);
+  const [showAnniversaryNotice, setShowAnniversaryNotice] = useState(() => {
+    if (typeof window === 'undefined') {
+      return false;
+    }
+
+    return localStorage.getItem(anniversaryNoticeStorageKey) !== 'true';
+  });
   const [theme, setTheme] = useState<ThemeMode>(() => {
     if (typeof window === 'undefined') {
       return 'normal';
@@ -45,6 +52,7 @@ export default function App() {
   };
 
   const closeAnniversaryNotice = () => {
+    localStorage.setItem(anniversaryNoticeStorageKey, 'true');
     setShowAnniversaryNotice(false);
   };
 
