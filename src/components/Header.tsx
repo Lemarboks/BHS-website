@@ -24,8 +24,6 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
   }, []);
 
   useEffect(() => {
-    document.body.classList.toggle('menu-lock', open);
-
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setOpen(false);
     };
@@ -38,7 +36,6 @@ export default function Header({ theme, onToggleTheme }: HeaderProps) {
     window.addEventListener('resize', onResize);
 
     return () => {
-      document.body.classList.remove('menu-lock');
       window.removeEventListener('keydown', onKeyDown);
       window.removeEventListener('resize', onResize);
     };
